@@ -5,11 +5,16 @@ import {Component} from '@angular/core';
     template: `
         <div>
             <terminal
-                [consoleTitle]="loginTitle"                
+                [consoleTitle]="loginTitle"
+                (onEnterHandler)="onCmdHandler($event)"                
             ></terminal>
         </div>
     `
 })
 export class LoginContainer {
-    loginTitle: string = "Terminal Login";    
+    loginTitle: string = "Terminal Login";
+
+    onCmdHandler(cmd: string){        
+        this.loginTitle = cmd;
+    }    
 };

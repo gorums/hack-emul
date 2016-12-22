@@ -1,6 +1,8 @@
 import {
     Component,
-    Input
+    Input,
+    Output,
+    EventEmitter
 } from '@angular/core';
 
 @Component({
@@ -87,11 +89,16 @@ import {
                 <li>cd ../../../../</li>
                 <li>pwd</li>
                 <li>/Users/pjlangley/Documents/websites/</li>                
-                <li><input name="shell-input"/></li>
+                <li><input #cmd name="shell-input" (keyup.enter)="onEnter(cmd.value)"/></li>
             </ul>
         </div>
     `
 })
 export class Terminal{
     @Input() consoleTitle: string = "Terminal";
+    @Output() onEnterHandler = new EventEmitter();
+
+    onEnter(cmd) {
+        this.onEnterHandler.next(cmd);
+    }
 };
