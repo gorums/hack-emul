@@ -84,12 +84,12 @@ import {
     template: `
         <div class="shell-wrap">
             <p class="shell-top-bar">{{consoleTitle}}</p>
-            <ul class="shell-body">
-                <li>cd&nbsp;/Users/pjlangley/Documents/websites/codechewing.com/git/css-shell/demo/</li>
-                <li>cd ../../../../</li>
-                <li>pwd</li>
-                <li>/Users/pjlangley/Documents/websites/</li>                
-                <li><input #cmd name="shell-input" (keyup.enter)="onEnter(cmd.value)"/></li>
+            <ul class="shell-body">                               
+                <li>
+                    <form class="row">
+                        <input class="col-xs-10" #cmd name="shell-input" (keyup.enter)="onEnter(cmd.value)"/>
+                    </form>
+                </li>
             </ul>
         </div>
     `
