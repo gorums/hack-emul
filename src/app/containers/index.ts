@@ -1,1 +1,2 @@
-export {Terminal} from './terminal';
+export {HomeContainer} from './home';
+export {LoginContainer} from './login';
